@@ -32,13 +32,9 @@ body {
 
 /*
 Todo List:
-1. Add mobile layout with media query
-2. Fix footer width
-3. Add pics in Bestseller section and bottom promo section
-4. Make search button functional
-5. Create signin, cart, and search pages (Search will simply show no results for now)
+1. Make search button functional
+2. Create signin, cart, and search pages (Search will simply show no results for now)
 */
-
 
 /* Navbar Styles */
 
@@ -397,6 +393,10 @@ Todo List:
     overflow: hidden;
 }
 
+.bestsellers-card .product-img img {
+    height: 200px;
+}
+
 .product-info {
     padding: 18px 18px 20px;
 }
@@ -504,14 +504,21 @@ Todo List:
 
 .banner-right-side {
     display: flex;
+    flex-direction: column;
     gap: 12px;
     justify-content: center;
+}
+
+.banner-img img {
+    width: 100%;
 }
 
 /* Footer */
 
 footer {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer {
@@ -586,4 +593,48 @@ footer {
     font-size: 11px;
     color: #6B6055;
     text-decoration: none;
+}
+
+/* Mobile Design */
+@media (max-width: 768px) {
+    body {
+        width: 100vw;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        place-content: center;
+    }
+
+    .intro-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .category-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .bestsellers-cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .banner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .logo {
+        font-size: 48px;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
 }
